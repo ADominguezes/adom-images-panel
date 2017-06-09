@@ -1,0 +1,79 @@
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@for $i from 1 through 12 {
+   :host([columns="#{$i}"]):host([type=accordion]) {
+    .accordion__item {
+      width: calc(#{100% / $i});
+      transition: ease 1s;
+    }
+    .accordion__item:hover {
+      width: 70%;
+      transition: ease 1s;
+    }
+  }
+}
+
+:host([type=accordion]) {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  .accordion {
+    display: flex;
+    flex-direction: row;
+    background-color: #121212;
+    &__item {
+      opacity: 0.5;
+      transition: opacity ease-in 0.5s;
+      box-sizing: border-box;
+      &__content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        &__info {
+          position: absolute;
+          bottom: 0;
+          padding: 1em;
+          background-color: #000;
+          opacity: 0.7;
+          width: 100%;
+          box-sizing: border-box;
+          &__title {
+            color: #fff;
+            font-weight: lighter;
+            font-size: 22px;
+            opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width:100%;
+          }
+
+          &__paragraph {
+            color: #999;
+            font-weight: lighter;
+            font-size: 14px;
+            opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width:100%;
+          }
+        }
+      }
+    }
+    &__item:hover {
+      opacity: 1;
+      z-index: 1;
+      transition: opacity ease-out 0.5s;
+    }
+  }
+}
+

@@ -1,0 +1,152 @@
+:host([hidden]) {
+  display: none; }
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden; }
+
+:host([columns="1"]):host([type=accordion]) .accordion__item {
+  width: calc(100%);
+  transition: ease 1s; }
+
+:host([columns="1"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="2"]):host([type=accordion]) .accordion__item {
+  width: calc(50%);
+  transition: ease 1s; }
+
+:host([columns="2"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="3"]):host([type=accordion]) .accordion__item {
+  width: calc(33.33333%);
+  transition: ease 1s; }
+
+:host([columns="3"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="4"]):host([type=accordion]) .accordion__item {
+  width: calc(25%);
+  transition: ease 1s; }
+
+:host([columns="4"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="5"]):host([type=accordion]) .accordion__item {
+  width: calc(20%);
+  transition: ease 1s; }
+
+:host([columns="5"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="6"]):host([type=accordion]) .accordion__item {
+  width: calc(16.66667%);
+  transition: ease 1s; }
+
+:host([columns="6"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="7"]):host([type=accordion]) .accordion__item {
+  width: calc(14.28571%);
+  transition: ease 1s; }
+
+:host([columns="7"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="8"]):host([type=accordion]) .accordion__item {
+  width: calc(12.5%);
+  transition: ease 1s; }
+
+:host([columns="8"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="9"]):host([type=accordion]) .accordion__item {
+  width: calc(11.11111%);
+  transition: ease 1s; }
+
+:host([columns="9"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="10"]):host([type=accordion]) .accordion__item {
+  width: calc(10%);
+  transition: ease 1s; }
+
+:host([columns="10"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="11"]):host([type=accordion]) .accordion__item {
+  width: calc(9.09091%);
+  transition: ease 1s; }
+
+:host([columns="11"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([columns="12"]):host([type=accordion]) .accordion__item {
+  width: calc(8.33333%);
+  transition: ease 1s; }
+
+:host([columns="12"]):host([type=accordion]) .accordion__item:hover {
+  width: 70%;
+  transition: ease 1s; }
+
+:host([type=accordion]) {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden; }
+  :host([type=accordion]) .accordion {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    background-color: #121212; }
+    :host([type=accordion]) .accordion__item {
+      opacity: 0.5;
+      transition: opacity ease-in 0.5s;
+      box-sizing: border-box; }
+      :host([type=accordion]) .accordion__item__content {
+        position: relative;
+        width: 100%;
+        height: 100%; }
+        :host([type=accordion]) .accordion__item__content__info {
+          position: absolute;
+          bottom: 0;
+          padding: 1em;
+          background-color: #000;
+          opacity: 0.7;
+          width: 100%;
+          box-sizing: border-box; }
+          :host([type=accordion]) .accordion__item__content__info__title {
+            color: #fff;
+            font-weight: lighter;
+            font-size: 22px;
+            opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%; }
+          :host([type=accordion]) .accordion__item__content__info__paragraph {
+            color: #999;
+            font-weight: lighter;
+            font-size: 14px;
+            opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%; }
+    :host([type=accordion]) .accordion__item:hover {
+      opacity: 1;
+      z-index: 1;
+      transition: opacity ease-out 0.5s; }

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>adom-images-panel demo</title>
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script>
+    window.Polymer = {
+      dom: 'shadow',
+      lazyRegister: 'true',
+      useNativeCSSProperties: 'true'
+    }
+
+  </script>
+
+  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../../adom-demo/adom-demo.html">
+  <link rel="import" href="../adom-images-panel.html">
+
+  <style is="custom-style" include="demo-pages-shared-styles">
+    /*Common styles*/
+
+    demo-snippet {
+      --demo-snippet-demo: {
+        display: block;
+      }
+      ;
+    }
+
+  </style>
+</head>
+
+<body>
+  <adom-demo id="demo" option-selected="0">
+    <demo-snippet id="view0" data-heading="Hello World" data-description="this is a reserved space for a description">
+      <template is="dom-bind" id="demo0">
+        <adom-images-panel id="component0" height="300">
+        </adom-images-panel>
+        <script>
+          (function (demo0) {
+            var accordionItems = [{
+                title: 'titulo',
+                subtitle: 'subtitle',
+                background: 'http://lorempixel.com/600/400/people/1/'
+              },
+              {
+                title: 'titulo 2',
+                subtitle: 'subtitle',
+                background: 'http://lorempixel.com/600/400/people/2/'
+              },
+              {
+                title: 'titulo 3',
+                subtitle: 'subtitle',
+                background: 'http://lorempixel.com/600/400/city/1/'
+              },
+              {
+                title: 'titulo 4',
+                subtitle: 'subtitle',
+                background: 'http://lorempixel.com/600/400/city/3/'
+              },
+              {
+                title: 'titulo 5',
+                subtitle: 'subtitle',
+                background: 'http://lorempixel.com/600/400/nature/1/'
+              },
+              {
+                title: 'titulo 6',
+                subtitle: 'subtitle',
+                background: 'http://lorempixel.com/600/400/nature/3/'
+              },
+              {
+                title: 'titulo 7',
+                subtitle: 'subtitle',
+                background: 'http://lorempixel.com/600/400/city/4/'
+              }
+            ]
+            var component0 = demo0.$.component0;
+            component0.items = accordionItems;
+          }(document.querySelector('#demo0')));
+
+        </script>
+      </template>
+    </demo-snippet>
+    <demo-snippet id="view1" data-heading="slot content" data-description="this is a reserved space for a description">
+      <template is="dom-bind" id="demo0">
+        <adom-images-panel id="component0" height="300">
+        </adom-images-panel>
+        <script>
+          (function (demo0) {
+            var accordionItems = [{
+                heading: 'titulo1',
+                subheading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ipsam, atque architecto deserunt obcaecati',
+                background: 'http://lorempixel.com/600/400/people/1/',
+                action: 'navigate-one'
+              },
+              {
+                heading: 'titulo 2',
+                subheading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ipsam, atque architecto deserunt obcaecati',
+                background: 'http://lorempixel.com/600/400/people/2/',
+                action: 'navigate-two'
+              },
+              {
+                heading: 'titulo 3',
+                subheading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ipsam, atque architecto deserunt obcaecati',
+                background: 'http://lorempixel.com/600/400/city/1/',
+                action: 'navigate-three'
+              },
+              {
+                heading: 'titulo 4',
+                subheading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ipsam, atque architecto deserunt obcaecati',
+                background: 'http://lorempixel.com/600/400/city/3/',
+                action: 'navigate-four'
+              },
+              {
+                heading: 'titulo 5',
+                subheading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ipsam, atque architecto deserunt obcaecati',
+                background: 'http://lorempixel.com/600/400/nature/1/',
+                action: 'navigate-five'
+              },
+              {
+                heading: 'titulo 6',
+                subheading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ipsam, atque architecto deserunt obcaecati',
+                background: 'http://lorempixel.com/600/400/nature/3/',
+                action: 'navigate-six'
+              },
+              {
+                heading: 'titulo 7',
+                subheading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ipsam, atque architecto deserunt obcaecati',
+                background: 'http://lorempixel.com/600/400/city/4/',
+                action: 'navigate-seven'
+              }
+            ]
+            var component0 = demo0.$.component0;
+            component0.items = accordionItems;
+          }(document.querySelector('#demo0')));
+
+        </script>
+      </template>
+    </demo-snippet>
+  </adom-demo>
+</body>
+
+</html>
