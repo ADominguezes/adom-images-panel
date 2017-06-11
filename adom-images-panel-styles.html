@@ -7,6 +7,66 @@
   box-sizing: border-box;
   overflow: hidden; }
 
+:host([type=accordion]) {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  @apply (--adom-images-panel-type-accordion); }
+  :host([type=accordion]) .accordion {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    background-color: var(--adom-images-panel-accordion-bg-color, #121212);
+    @apply (--adom-images-panel-accordion); }
+    :host([type=accordion]) .accordion__item {
+      opacity: 0.5;
+      transition: opacity ease-in 0.5s;
+      box-sizing: border-box;
+      @apply (--adom-images-panel-accordion-item); }
+      :host([type=accordion]) .accordion__item__content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        @apply (--adom-images-panel-accordion-item-content); }
+        :host([type=accordion]) .accordion__item__content__info {
+          position: absolute;
+          bottom: 0;
+          padding: 1em;
+          background-color: var(--adom-images-panel-accordion-item-content-info-bg-color, #000);
+          opacity: 0.7;
+          width: 100%;
+          box-sizing: border-box;
+          @apply (--adom-images-panel-accordion-item-content-info); }
+          :host([type=accordion]) .accordion__item__content__info__title {
+            color: var(--adom-images-panel-accordion-item-content-info-title-color, #fff);
+            font-weight: lighter;
+            font-size: 22px;
+            opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            @apply (--adom-images-panel-accordion-item-content-info-title); }
+          :host([type=accordion]) .accordion__item__content__info__paragraph {
+            color: var(--adom-images-panel-accordion-item-content-info-paragraph-color, #999);
+            font-weight: lighter;
+            font-size: 14px;
+            opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            @apply (--adom-images-panel-accordion-item-content-info-paragraph); }
+    :host([type=accordion]) .accordion__item:hover, :host([type=accordion]) .accordion__item:focus {
+      opacity: 1;
+      z-index: 1;
+      transition: opacity ease-out 0.5s;
+      @apply (--adom-images-panel-accordion-item-hover); }
+    :host([type=accordion]) .accordion__item:focus {
+      outline: none;
+      @apply (--adom-images-panel-accordion-item-focus); }
+
 :host([columns="1"]):host([type=accordion]) .accordion__item {
   width: calc(100%);
   transition: ease 1s; }
@@ -103,128 +163,90 @@
   width: 70%;
   transition: ease 1s; }
 
-:host([type=accordion]) {
-  display: block;
-  box-sizing: border-box;
-  overflow: hidden; }
-  :host([type=accordion]) .accordion {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    background-color: #121212; }
-    :host([type=accordion]) .accordion__item {
-      opacity: 0.5;
-      transition: opacity ease-in 0.5s;
-      box-sizing: border-box; }
-      :host([type=accordion]) .accordion__item__content {
-        position: relative;
-        width: 100%;
-        height: 100%; }
-        :host([type=accordion]) .accordion__item__content__info {
-          position: absolute;
-          bottom: 0;
-          padding: 1em;
-          background-color: #000;
-          opacity: 0.7;
-          width: 100%;
-          box-sizing: border-box; }
-          :host([type=accordion]) .accordion__item__content__info__title {
-            color: #fff;
-            font-weight: lighter;
-            font-size: 22px;
-            opacity: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%; }
-          :host([type=accordion]) .accordion__item__content__info__paragraph {
-            color: #999;
-            font-weight: lighter;
-            font-size: 14px;
-            opacity: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%; }
-    :host([type=accordion]) .accordion__item:hover, :host([type=accordion]) .accordion__item:focus {
-      opacity: 1;
-      z-index: 1;
-      transition: opacity ease-out 0.5s; }
-    :host([type=accordion]) .accordion__item:focus {
-      outline: none; }
-
 :host([type=carrousel]) {
   display: block;
   box-sizing: border-box;
-  position: relative; }
+  position: relative;
+  @apply (--adom-images-panel-type-carrousel); }
   :host([type=carrousel]) .navigation {
     top: 0;
     position: absolute;
     height: 100%;
     width: 50px;
-    background: transparent;
+    background: var(--adom-images-panel-navigation-bg, transparent);
     border: 0;
     outline: none;
     cursor: pointer;
-    /* opacity: 0; */
     transition: opacity ease-out 0.5s;
     cursor: pointer;
     outline: none;
     transition: opacity ease-out 0.5s;
-    z-index: 2; }
-    :host([type=carrousel]) .navigation__icon__right {
-      transform: rotate(180deg); }
+    z-index: 2;
+    @apply (--adom-images-panel-navigation); }
+    :host([type=carrousel]) .navigation__icon {
+      @apply (--adom-images-panel-navigation-icon); }
+      :host([type=carrousel]) .navigation__icon__right {
+        transform: rotate(180deg);
+        @apply (--adom-images-panel-navigation-icon-right); }
   :host([type=carrousel]) .navigation.right {
-    right: 0; }
+    right: 0;
+    @apply (--adom-images-panel-navigation-right); }
   :host([type=carrousel]) .carrousel {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
     flex-direction: row;
-    background-color: #121212;
+    background-color: var(--adom-images-panel-carrousel-bg-color, #121212);
     position: relative;
-    transition: transform linear 0.5s; }
+    transition: transform linear 0.5s;
+    @apply (--adom-images-panel-carrousel); }
     :host([type=carrousel]) .carrousel__item {
       opacity: 0.5;
       transition: opacity ease-in 0.5s;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      @apply (--adom-images-panel-carrousel-item); }
       :host([type=carrousel]) .carrousel__item__content {
         position: relative;
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        @apply (--adom-images-panel-carrousel-item-content); }
         :host([type=carrousel]) .carrousel__item__content__info {
           position: absolute;
           bottom: 0;
           padding: 1em;
-          background-color: #000;
+          background-color: var(--adom-images-panel-carrousel-item-content-info-bg-color, #000);
           opacity: 0.7;
           width: 100%;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          @apply (--adom-images-panel-carrousel-item-content-info); }
           :host([type=carrousel]) .carrousel__item__content__info__title {
-            color: #fff;
+            color: var(--adom-images-panel-carrousel-item-content-info-title-color, #fff);
             font-weight: lighter;
             font-size: 22px;
             opacity: 1;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            width: 100%; }
+            width: 100%;
+            @apply (--adom-images-panel-carrousel-item-content-info-title); }
           :host([type=carrousel]) .carrousel__item__content__info__paragraph {
-            color: #999;
+            color: var(--adom-images-panel-carrousel-item-content-info-paragraph-color, #999);
             font-weight: lighter;
             font-size: 14px;
             opacity: 1;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            width: 100%; }
+            width: 100%;
+            @apply (--adom-images-panel-carrousel-item-content-info-paragraph); }
     :host([type=carrousel]) .carrousel__item:hover, :host([type=carrousel]) .carrousel__item:focus {
       opacity: 1;
       z-index: 1;
-      transition: opacity ease-out 0.5s; }
+      transition: opacity ease-out 0.5s;
+      @apply (--adom-images-panel-carrousel-item-hover); }
     :host([type=carrousel]) .carrousel__item:focus {
-      outline: none; }
+      outline: none;
+      @apply (--adom-images-panel-carrousel-item-focus); }
 
 :host([columns="1"]):host([type=carrousel]) .carrousel {
   width: calc(100%); }

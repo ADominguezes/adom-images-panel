@@ -8,6 +8,74 @@
   overflow: hidden;
 }
 
+:host([type=accordion]) {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  @apply(--adom-images-panel-type-accordion);
+  .accordion {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--adom-images-panel-accordion-bg-color, #121212);
+    @apply(--adom-images-panel-accordion);
+    &__item {
+      opacity: 0.5;
+      transition: opacity ease-in 0.5s;
+      box-sizing: border-box;
+      @apply(--adom-images-panel-accordion-item);
+      &__content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        @apply(--adom-images-panel-accordion-item-content);
+        &__info {
+          position: absolute;
+          bottom: 0;
+          padding: 1em;
+          background-color: var(--adom-images-panel-accordion-item-content-info-bg-color, #000);
+          opacity: 0.7;
+          width: 100%;
+          box-sizing: border-box;
+          @apply(--adom-images-panel-accordion-item-content-info);
+          &__title {
+            color: var(--adom-images-panel-accordion-item-content-info-title-color, #fff);
+            font-weight: lighter;
+            font-size: 22px;
+            opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            @apply(--adom-images-panel-accordion-item-content-info-title);
+          }
+          &__paragraph {
+            color: var(--adom-images-panel-accordion-item-content-info-paragraph-color, #999);
+            font-weight: lighter;
+            font-size: 14px;
+            opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            @apply(--adom-images-panel-accordion-item-content-info-paragraph);
+          }
+        }
+      }
+    }
+    &__item:hover,
+    &__item:focus {
+      opacity: 1;
+      z-index: 1;
+      transition: opacity ease-out 0.5s;
+      @apply(--adom-images-panel-accordion-item-hover);
+    }
+    &__item:focus {
+      outline: none;
+      @apply(--adom-images-panel-accordion-item-focus);
+    }
+  }
+}
+
 @for $i from 1 through 12 {
    :host([columns="#{$i}"]):host([type=accordion]) {
     .accordion__item {
@@ -21,117 +89,66 @@
   }
 }
 
-:host([type=accordion]) {
-  display: block;
-  box-sizing: border-box;
-  overflow: hidden;
-  .accordion {
-    display: flex;
-    flex-direction: row;
-    background-color: #121212;
-    &__item {
-      opacity: 0.5;
-      transition: opacity ease-in 0.5s;
-      box-sizing: border-box;
-      &__content {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        &__info {
-          position: absolute;
-          bottom: 0;
-          padding: 1em;
-          background-color: #000;
-          opacity: 0.7;
-          width: 100%;
-          box-sizing: border-box;
-          &__title {
-            color: #fff;
-            font-weight: lighter;
-            font-size: 22px;
-            opacity: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%;
-          }
-          &__paragraph {
-            color: #999;
-            font-weight: lighter;
-            font-size: 14px;
-            opacity: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%;
-          }
-        }
-      }
-    }
-    &__item:hover,
-    &__item:focus {
-      opacity: 1;
-      z-index: 1;
-      transition: opacity ease-out 0.5s;
-    }
-    &__item:focus {
-      outline: none;
-    }
-  }
-}
-
 :host([type=carrousel]) {
   display: block;
   box-sizing: border-box;
   position: relative;
+  @apply(--adom-images-panel-type-carrousel);
   .navigation {
     top: 0;
     position: absolute;
     height: 100%;
     width: 50px;
-    background: transparent;
+    background: var(--adom-images-panel-navigation-bg, transparent);
     border: 0;
     outline: none;
     cursor: pointer;
-    /* opacity: 0; */
     transition: opacity ease-out 0.5s;
     cursor: pointer;
     outline: none;
     transition: opacity ease-out 0.5s;
     z-index: 2;
+    @apply(--adom-images-panel-navigation);
     &__icon {
+      @apply(--adom-images-panel-navigation-icon);
       &__right {
         transform: rotate(180deg);
+        @apply(--adom-images-panel-navigation-icon-right);
       }
     }
   }
   .navigation.right {
     right: 0;
+    @apply(--adom-images-panel-navigation-right);
   }
   .carrousel {
     display: flex;
     flex-direction: row;
-    background-color: #121212;
+    background-color: var(--adom-images-panel-carrousel-bg-color, #121212);
     position: relative;
     transition: transform linear 0.5s;
+    @apply(--adom-images-panel-carrousel);
     &__item {
       opacity: 0.5;
       transition: opacity ease-in 0.5s;
       box-sizing: border-box;
+      @apply(--adom-images-panel-carrousel-item);
       &__content {
         position: relative;
         width: 100%;
         height: 100%;
+        @apply(--adom-images-panel-carrousel-item-content);
         &__info {
           position: absolute;
           bottom: 0;
           padding: 1em;
-          background-color: #000;
+          background-color: var(--adom-images-panel-carrousel-item-content-info-bg-color, #000);
           opacity: 0.7;
           width: 100%;
           box-sizing: border-box;
+          @apply(--adom-images-panel-carrousel-item-content-info);
           &__title {
-            color: #fff;
+            color: var(--adom-images-panel-carrousel-item-content-info-title-color, #fff);
             font-weight: lighter;
             font-size: 22px;
             opacity: 1;
@@ -139,9 +156,10 @@
             overflow: hidden;
             text-overflow: ellipsis;
             width: 100%;
+            @apply(--adom-images-panel-carrousel-item-content-info-title);
           }
           &__paragraph {
-            color: #999;
+            color: var(--adom-images-panel-carrousel-item-content-info-paragraph-color, #999);
             font-weight: lighter;
             font-size: 14px;
             opacity: 1;
@@ -149,6 +167,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             width: 100%;
+            @apply(--adom-images-panel-carrousel-item-content-info-paragraph);
           }
         }
       }
@@ -158,9 +177,11 @@
       opacity: 1;
       z-index: 1;
       transition: opacity ease-out 0.5s;
+      @apply(--adom-images-panel-carrousel-item-hover);
     }
     &__item:focus {
       outline: none;
+      @apply(--adom-images-panel-carrousel-item-focus);
     }
   }
 }
