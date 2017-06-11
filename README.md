@@ -59,7 +59,7 @@ __example__
 </adom-image-panel>
 ```
 
-````js
+```js
 var items=[
   {
     id: 0,
