@@ -1,7 +1,7 @@
 {
   "name": "adom-images-panel",
   "version": "0.1.0",
-  "description": "A component description",
+  "description": "Is a component that can shows two different elements an accordion, or a carrousel",
   "main": "adom-images-panel.html",
   "keywords": [],
   "ignore": [],
