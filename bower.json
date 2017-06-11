@@ -1,13 +1,15 @@
 {
   "name": "adom-images-panel",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A component description",
   "main": "adom-images-panel.html",
   "keywords": [],
   "ignore": [],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.8.0",
-    "adom-media": "ADominguezes/adom-media"
+    "adom-media": "ADominguezes/adom-media",
+    "iron-icons": "PolymerElements/iron-icons#^2.0.1",
+    "iron-icon": "PolymerElements/iron-icon#^2.0.0"
   },
   "devDependencies": {
     "adom-demo": "https://github.com/ADominguezes/adom-demo.git#^1.0.1",

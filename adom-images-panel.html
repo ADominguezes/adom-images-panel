@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../adom-media/adom-media.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="adom-images-panel-styles.html">
 
 <!--
@@ -12,22 +13,37 @@ A component description
 <dom-module id="adom-images-panel">
   <style include="adom-images-panel-styles adom-images-panel-shared-styles"></style>
   <template>
-    <div class$="[[type]]">
+
+    <button class="navigation" id="before" on-tap="_beforeButton" hidden>
+      <span class="navigation__icon">
+        <iron-icon class="navigation__icon" icon="[[iconNavigation]]"></iron-icon>
+      </span>
+    </button>
+    <div class$="[[type]]" id="organizer">
       <template id="sections" is="dom-repeat" items="[[items]]">
-          <section class="accordion__item" on-tap="[[item.action]]">
-            <adom-media img-src="[[item.background]]" height="[[height]]" responsive fade-in>
-              <div slot="image-content" class="accordion__item__content">
-                <div class="accordion__item__content__info">
-                  <span class="accordion__item__content__info__title">[[item.heading]]</span>
-                  <p class="accordion__item__content__info__paragraph">[[item.subheading]]
-                  </p>
-                </div>
+        <a class$="[[type]]__item" href$="[[item.href]]" target$="[[item.target]]">
+          <adom-media img-src="[[item.background]]" height="[[height]]" responsive fade-in>
+            <div slot="image-content" class$="[[type]]__item__content">
+              <div class$="[[type]]__item__content__info">
+                <span class$="[[type]]__item__content__info__title">[[item.heading]]</span>
+                <p class$="[[type]]__item__content__info__paragraph">[[item.subheading]]
+                </p>
+                <template is="dom-if" if="[[item.buttonLabel]]">
+                  <button class$="[[type]]__item__content__info__button">
+                      [[item.buttonLabel]]
+                    </button>
+                </template>
               </div>
-            </adom-media>
-          </section>
+            </div>
+          </adom-media>
+        </a>
       </template>
     </div>
-
+    <button class="navigation right" id="next" on-tap="_nextButton" hidden>
+      <span class="navigation__icon">
+        <iron-icon class="navigation__icon__right" icon="[[iconNavigation]]"></iron-icon>
+      </span>
+    </button>
   </template>
   <script src="adom-images-panel.js"></script>
 </dom-module>
