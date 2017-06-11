@@ -51,6 +51,13 @@
         value: 0,
         reflectToAttribute: true,
         observer: '_computeSelected'
+      },
+      /**
+       * It´s used for set the default id by slot
+       */
+      defaultId: {
+        type: String,
+        value: 'content'
       }
     },
     _computeItems: function () {
@@ -89,6 +96,9 @@
     _translateCarrousel: function () {
       var translate = (100 / this.columns) * this.selected;
       this.$.organizer.style = "transform: translateX(-" + translate + "%)"
+    },
+    _computeSlot: function(id) {
+      return this.defaultId + id;
     }
 
   });

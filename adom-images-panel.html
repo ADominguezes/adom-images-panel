@@ -24,16 +24,18 @@ A component description
         <a class$="[[type]]__item" href$="[[item.href]]" target$="[[item.target]]">
           <adom-media img-src="[[item.background]]" height="[[height]]" responsive fade-in>
             <div slot="image-content" class$="[[type]]__item__content">
-              <div class$="[[type]]__item__content__info">
-                <span class$="[[type]]__item__content__info__title">[[item.heading]]</span>
-                <p class$="[[type]]__item__content__info__paragraph">[[item.subheading]]
-                </p>
-                <template is="dom-if" if="[[item.buttonLabel]]">
-                  <button class$="[[type]]__item__content__info__button">
+              <slot name="[[_computeSlot(item.id)]]">
+                <div class$="[[type]]__item__content__info">
+                  <span class$="[[type]]__item__content__info__title">[[item.heading]]</span>
+                  <p class$="[[type]]__item__content__info__paragraph">[[item.subheading]]
+                  </p>
+                  <template is="dom-if" if="[[item.buttonLabel]]">
+                    <button class$="[[type]]__item__content__info__button">
                       [[item.buttonLabel]]
                     </button>
-                </template>
-              </div>
+                  </template>
+                </div>
+              </slot>
             </div>
           </adom-media>
         </a>

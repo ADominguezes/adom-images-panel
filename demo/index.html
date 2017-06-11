@@ -100,7 +100,7 @@
         </script>
       </template>
     </demo-snippet>
-    <demo-snippet id="view1" data-heading="slot content" data-description="this is a reserved space for a description">
+    <demo-snippet id="view1" data-heading="carrousel" data-description="use the type carrousel for set an carrousel">
       <template is="dom-bind" id="demo1">
         <adom-images-panel id="component1" height="300" type="carrousel" icon-navigation="icons:chevron-left">
         </adom-images-panel>
@@ -159,6 +159,123 @@
             var component1 = demo.$.component1;
             component1.items = accordionItems;
           }(demo.querySelector('#demo1')));
+
+        </script>
+      </template>
+    </demo-snippet>
+    <demo-snippet id="view2" data-heading="slot content" data-description="It´s possible use contents for custom the images content">
+      <template is="dom-bind" id="demo2">
+        <style is="custom-style">
+          .slot0 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+          }
+
+          .slot1 {
+            display: flex;
+            flex-direction: row;
+          }
+          .slot2 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #21110a;
+            opacity: 0.8;
+            padding: 1em;
+            box-sizing: border-box;
+          }
+
+          .slot-right {
+            width: 30%;
+            background-color: white;
+            padding: 1em;
+            box-sizing: border-box;
+            height: 100%;
+            text-align: center;
+            position: absolute;
+            right: 0;
+          }
+
+          .button {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            color: white;
+            padding: 1em;
+            border: 0;
+            border-radius: 5px;
+            width: 80%;
+            font-weight: lighter;
+            font-size: 18px;
+            bottom: 0;
+          }
+
+          h2 {
+            font-size: 22px;
+            color: black;
+            font-weight: bold;
+            text-transform: capitalize;
+          }
+
+          h3 {
+            font-size: 18px;
+            color: white;
+            font-weight: lighter;
+            text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
+          }
+
+          p {
+            font-size: 14px;
+            font-weight: lighter;
+            color: white;
+          }
+
+        </style>
+        <adom-images-panel id="component2" height="300" type="carrousel" icon-navigation="icons:chevron-left">
+          <div class="slot0" slot="content0">
+            <h2>lorem ipsum dolor sit amet</h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas veritatis laborum assumenda pariatur molestiae
+              nam commodi quod quo ducimus iure.</h3>
+          </div>
+          <div class="slot1" slot="content1">
+            <div class="slot-right">
+              <h2>lorem ipsum dolor sit amet</h2>
+              <button class="button">
+                Start
+              </button>
+            </div>
+          </div>
+          <div class="slot2" slot="content2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, eos quod deleniti nemo fugit et quas. Ipsum, voluptate, sapiente. Rem odit aut incidunt tempore eaque consequatur eius cumque iure veritatis.</p>
+          </div>
+        </adom-images-panel>
+        <script>
+          (function (demo) {
+            var accordionItems = [{
+                id: 0,
+                background: 'http://lorempixel.com/800/400/people/1/',
+                href: 'http://google.es',
+                target: '_blank'
+              },
+              {
+                id: 1,
+                background: 'http://lorempixel.com/800/400/people/3/',
+                href: 'http://facebook.com',
+                target: '_blank'
+              },
+              {
+                id: 2,
+                background: 'http://lorempixel.com/800/400/people/8/',
+                href: 'http://github.com',
+                target: '_blank'
+              },
+            ]
+            var component2 = demo.$.component2;
+            component2.items = accordionItems;
+          }(demo.querySelector('#demo2')));
 
         </script>
       </template>
